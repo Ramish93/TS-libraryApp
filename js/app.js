@@ -1,29 +1,57 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const enums_1 = require("./enums");
 const getAllBooks = () => {
     let books = [
-        { title: 'ulysses', author: 'james jouce', available: false, catagory: Catagory.fiction },
-        { title: 'a farewell', author: 'ernest', available: true, catagory: Catagory.biography },
-        { title: 'i know why', author: 'james jouce', available: true, catagory: Catagory.poetry },
+        {
+            id: 1,
+            title: "Ulysses",
+            author: "James Joyce",
+            available: true,
+            category: enums_1.Catagory.fiction,
+        },
+        {
+            id: 2,
+            title: "A Farewell to Arms",
+            author: "Ernest Hemingway",
+            available: false,
+            category: enums_1.Catagory.fiction,
+        },
+        {
+            id: 3,
+            title: "I Know Why the Caged Bird Sings",
+            author: "Maya Angelou",
+            available: true,
+            category: enums_1.Catagory.poetry,
+        },
+        {
+            id: 4,
+            title: "Moby Dick",
+            author: "Herman Melville",
+            available: true,
+            category: enums_1.Catagory.fiction,
+        },
     ];
     return books;
 };
 const logFirstAva = (books) => {
     let numOfBooks = books.length;
-    let firstAvailable = '';
+    let firstAvailable = "";
     for (let currentBook of books) {
         if (currentBook.available) {
             firstAvailable = currentBook.title;
             break;
         }
     }
-    console.log('total', +numOfBooks);
-    console.log('first book', firstAvailable);
+    console.log("total", +numOfBooks);
+    console.log("first book", firstAvailable);
 };
 const getBookByCatagory = (catagoryFilter) => {
-    console.log('catagory', Catagory[poetry]);
+    console.log("catagory", enums_1.Catagory[enums_1.Catagory.poetry]);
     const allBooks = getAllBooks();
     const filteredTitles = [];
     for (let currentBook of allBooks) {
-        if (currentBook.catagory === catagoryFilter) {
+        if (currentBook.category === catagoryFilter) {
             filteredTitles.push(currentBook.title);
         }
     }
@@ -34,11 +62,21 @@ const logTitle = (titles) => {
         console.log(title);
     }
 };
-var Catagory;
-(function (Catagory) {
-    Catagory[Catagory["biography"] = 0] = "biography";
-    Catagory[Catagory["poetry"] = 1] = "poetry";
-    Catagory[Catagory["fiction"] = 2] = "fiction";
-})(Catagory || (Catagory = {}));
-const poetrybooks = getBookByCatagory(Catagory.poetry);
-logTitle(poetrybooks);
+const getBookById = (id) => {
+    const books = getAllBooks();
+    return books.filter((book) => book.id === id)[0];
+};
+const createCustomerId = (name, id) => {
+    return name + id;
+};
+const createCustomer = (name, age, city) => {
+    console.log(name);
+};
+const id = createCustomerId("ramish", 10);
+console.log(id);
+// const fictionBooks = getBookByCatagory(Catagory.fiction)
+// fictionBooks.forEach((val, idx, arr) => {
+//     console.log('val', val);
+//     console.log('idx', ++idx);
+//     console.log('arr', arr);
+// })
