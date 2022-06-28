@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const enums_1 = require("./enums");
+const classes_1 = require("./classes");
 const getAllBooks = () => {
     let books = [
         {
@@ -80,3 +81,6 @@ console.log(id);
 //     console.log('idx', ++idx);
 //     console.log('arr', arr);
 // })
+let favLib = new classes_1.UniversityLibrarian();
+favLib.name = "ramish";
+favLib.assistCustomer("Nathalia");
