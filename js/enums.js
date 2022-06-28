@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Catagory = void 0;
-var Catagory;
-(function (Catagory) {
-    Catagory[Catagory["biography"] = 0] = "biography";
-    Catagory[Catagory["poetry"] = 1] = "poetry";
-    Catagory[Catagory["fiction"] = 2] = "fiction";
-})(Catagory = exports.Catagory || (exports.Catagory = {}));
+exports.Category = void 0;
+var Category;
+(function (Category) {
+    Category[Category["Biography"] = 0] = "Biography";
+    Category[Category["Poetry"] = 1] = "Poetry";
+    Category[Category["Fiction"] = 2] = "Fiction";
+})(Category = exports.Category || (exports.Category = {}));

@@ -1,3 +1,5 @@
-export enum Catagory {biography, poetry, fiction}
-
-
+export enum Category {
+  Biography,
+  Poetry,
+  Fiction,
+}

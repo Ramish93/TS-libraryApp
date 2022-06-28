@@ -1,31 +1,42 @@
-import { Catagory } from "./enums";
+import { Category } from "./enums";
 
 interface Book {
   id: number;
   title: string;
   author: string;
   available: boolean;
-  category: Catagory;
+  category: Category;
   pages?: number;
-  markedDamaged?: DamagedLogger;
+  markedDamaged?: DamageLogger;
 }
 
 // this is a function inter face to make it we pass the types of args in parentesis and then use collon to seperate them from return type of function which in this case is void.
-interface DamagedLogger {
+interface DamageLogger {
   (reason: string): void;
 }
+
+interface Book {
+  id: number;
+  title: string;
+  author: string;
+  available: boolean;
+  category: Category;
+  pages?: number;
+  markDamaged?: DamageLogger;
+}
+
 interface Person {
   name: string;
   email: string;
 }
 
 interface Author extends Person {
-  numOfBooks: number;
+  numBooksPublished: number;
 }
 
 interface Librarian extends Person {
   department: string;
-  assistCustomer: (cusName: string) => void;
+  assistCustomer: (custName: string) => void;
 }
 
-export { Book, DamagedLogger, Author, Librarian };
+export { Book, DamageLogger as Logger, Author, Librarian };
